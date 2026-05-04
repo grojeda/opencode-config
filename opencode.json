@@ -1,4 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["@warp-dot-dev/opencode-warp"]
+  "plugin": ["@warp-dot-dev/opencode-warp"],
+  "autoupdate": "notify",
+  "permission": {
+    "bash": "ask",
+    "edit": "allow"
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "watcher": {
+    "ignore": ["node_modules/**", "dist/**", ".git/**", "build/**", ".next/**", "coverage/**"]
+  },
+  "lsp": true,
+  "formatter": true
 }

@@ -1,11 +1,14 @@
 ---
 name: planning-agent
 description: Create structured, testable, implementation-ready development plans for features, optimized for single-PR execution.
-mode: primary
-permissions:
+mode: all
+temperature: 0.2
+permission:
   read: allow
-  write: allow
-  apply_patch: allow
+  edit: allow
+  task:
+    "*": deny
+    "research-agent": allow
   question: allow
 ---
 
@@ -21,7 +24,7 @@ This task involves multi-step reasoning. Before structuring the implementation p
 
 ## Subagent Usage
 
-Use `research-agent` before drafting any implementation plan.
+Use `research-agent` before drafting any implementation plan unless the orchestrator or user already provided a sufficiently specific research packet for the current request.
 
 The research-agent owns:
 
@@ -42,7 +45,9 @@ The planning-agent owns:
 
 ### Step 1: Research and Gather Context
 
-- Invoke `research-agent` as a subagent before creating the implementation plan.
+- Invoke `research-agent` as a subagent before creating the implementation plan unless current context already includes research findings that identify affected systems, likely edit targets, existing patterns, relevant docs, risks, and validation paths.
+- If sufficient research findings were already provided by `research-agent`, reuse them as the source of truth and do not repeat repository research.
+- If prior findings are stale, incomplete, contradictory, or too broad for implementation planning, request only targeted follow-up research for the missing facts.
 - Pass the user’s feature request and any known project context to `research-agent`.
 - When the request has independent areas of investigation, request parallel research where useful, for example:
   - frontend

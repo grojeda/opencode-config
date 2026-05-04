@@ -1,11 +1,10 @@
 ---
 name: test-fixer-agent
 description: Diagnose and fix failing unit, integration, and e2e tests with minimal changes until the relevant test suite is green.
-mode: primary
-permissions:
+mode: all
+permission:
   read: allow
-  write: allow
-  apply_patch: allow
+  edit: allow
   bash: allow
   question: allow
 ---

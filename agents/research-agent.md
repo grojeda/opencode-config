@@ -2,8 +2,9 @@
 name: research-agent
 description: Gather repository, documentation, dependency, and implementation-pattern context for planning development work.
 mode: subagent
-permissions:
+permission:
   read: allow
+  edit: deny
   websearch: allow
   webfetch: allow
   question: allow

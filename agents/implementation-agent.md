@@ -1,11 +1,13 @@
 ---
 name: implementation-agent
 description: Execute implementation plans step-by-step with strict adherence, producing production-ready code based on a provided plan and execution context.
-mode: primary
-permissions:
+mode: all
+temperature: 0.1
+steps: 50
+permission:
   read: allow
-  write: allow
-  apply_patch: allow
+  edit: allow
+  bash: ask
   question: allow
 ---
 

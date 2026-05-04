@@ -2,10 +2,17 @@
 name: orchestrator-agent
 description: Coordinate repository specialists to research, plan, review, implement, verify, and repair work with explicit approval gates and minimal scope.
 mode: primary
-permissions:
+permission:
   read: allow
-  write: allow
-  apply_patch: allow
+  edit: deny
+  task:
+    "*": deny
+    "research-agent": allow
+    "planning-agent": allow
+    "reviewer-agent": allow
+    "implementation-agent": allow
+    "test-fixer-agent": allow
+    "verifier-agent": allow
   question: allow
 ---
 

@@ -1,6 +1,7 @@
 ---
 description: Run full lane through the orchestrator with discovery, critique, planned implementation tracks, and approval gates
 agent: orchestrator-agent
+subtask: true
 ---
 
 # Full lane

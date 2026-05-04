@@ -1,6 +1,7 @@
 ---
 description: Run the medium lane through the orchestrator for medium-complexity work with lightweight discovery and scoped planned execution
 agent: orchestrator-agent
+subtask: true
 ---
 
 # Medium lane

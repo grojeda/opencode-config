@@ -2,6 +2,15 @@
 name: verifier-agent
 description: Post-implementation auditor that validates implementation against plan using adversarial testing and inconsistency detection.
 mode: subagent
+permission:
+  read: allow
+  edit: deny
+  bash:
+    "*": ask
+    "git diff*": allow
+    "git status*": allow
+    "rg *": allow
+  question: allow
 ---
 
 You are the Verifier.

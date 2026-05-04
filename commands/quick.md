@@ -1,6 +1,7 @@
 ---
 description: Run the quick lane through the orchestrator for small isolated changes with one tiny plan and one implementation track
 agent: orchestrator-agent
+subtask: true
 ---
 
 # Quick lane

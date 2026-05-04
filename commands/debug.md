@@ -1,6 +1,7 @@
 ---
 description: Run the debug lane using the repo agents from evidence to root cause to a narrow fix
 agent: orchestrator-agent
+subtask: true
 ---
 
 Treat `$ARGUMENTS` as the user's bug report or debugging request for this repo.

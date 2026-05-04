@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "organization": "German Rodriguez",
+  "date": "May 2026",
+  "abstract": "Practical Angular engineering guide for AI agents and LLMs. Covers standalone architecture, signals, efficient templates, RxJS cancellation and cleanup, lazy routing, and typed forms. Prioritized to steer code generation and review toward predictable, maintainable, and performant Angular applications.",
+  "references": [
+    "https://angular.dev/guide/signals",
+    "https://angular.dev/guide/templates/control-flow",
+    "https://angular.dev/guide/defer",
+    "https://angular.dev/guide/routing",
+    "https://angular.dev/guide/forms/typed-forms",
+    "https://rxjs.dev/api/operators/switchMap"
+  ]
+}

@@ -23,7 +23,7 @@ readonly visibleItems = computed(() => this.items().filter(item => item.visible)
 
 ```html
 @for (item of visibleItems(); track item.id) {
-  <li>{{ item.name }}</li>
+<li>{{ item.name }}</li>
 }
 ```
 

@@ -21,9 +21,9 @@ ngOnInit() {
 **Correct (route-level resolver):**
 
 ```typescript
-export const orderResolver: ResolveFn<Order> = route => {
-  return inject(OrdersService).getOrder(route.paramMap.get('id')!)
-}
+export const orderResolver: ResolveFn<Order> = (route) => {
+  return inject(OrdersService).getOrder(route.paramMap.get("id")!);
+};
 ```
 
 Reference: [Angular Routing Data Resolvers](https://angular.dev/guide/routing/common-router-tasks#pre-fetching-component-data)

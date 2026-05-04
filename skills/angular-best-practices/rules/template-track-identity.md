@@ -19,7 +19,7 @@ Always track a stable key for repeated items.
 
 ```html
 @for (user of users(); track user.id) {
-  <li>{{ user.name }}</li>
+<li>{{ user.name }}</li>
 }
 ```
 

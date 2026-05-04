@@ -13,18 +13,18 @@ Use typed reactive forms when validation or submission flow matters.
 
 ```typescript
 form = new FormGroup({
-  name: new FormControl(''),
-  email: new FormControl('')
-})
+  name: new FormControl(""),
+  email: new FormControl(""),
+});
 ```
 
 **Correct (typed controls):**
 
 ```typescript
 form = new FormGroup({
-  name: new FormControl<string>('', { nonNullable: true }),
-  email: new FormControl<string>('', { nonNullable: true })
-})
+  name: new FormControl<string>("", { nonNullable: true }),
+  email: new FormControl<string>("", { nonNullable: true }),
+});
 ```
 
 Reference: [Angular Typed Forms](https://angular.dev/guide/forms/typed-forms)

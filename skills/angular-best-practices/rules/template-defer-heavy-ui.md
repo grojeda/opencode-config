@@ -12,21 +12,18 @@ Use `@defer` for widgets, charts, editors, and below-the-fold content.
 **Incorrect (eager heavy UI):**
 
 ```html
-<app-sales-chart />
-<app-rich-editor />
+<app-sales-chart /> <app-rich-editor />
 ```
 
 **Correct (deferred loading):**
 
 ```html
 @defer (on viewport) {
-  <app-sales-chart />
+<app-sales-chart />
 } @placeholder {
-  <app-chart-skeleton />
-}
-
-@defer (when isEditing()) {
-  <app-rich-editor />
+<app-chart-skeleton />
+} @defer (when isEditing()) {
+<app-rich-editor />
 }
 ```
 

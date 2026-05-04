@@ -49,14 +49,14 @@ Use `ChangeDetectionStrategy.OnPush` for feature components and feed the templat
 
 ```typescript
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html'
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
 })
 export class CartComponent {
-  items: CartItem[] = []
+  items: CartItem[] = [];
 
   addItem(item: CartItem) {
-    this.items.push(item)
+    this.items.push(item);
   }
 }
 ```
@@ -65,16 +65,18 @@ export class CartComponent {
 
 ```typescript
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {
-  readonly items = signal<CartItem[]>([])
-  readonly total = computed(() => this.items().reduce((sum, item) => sum + item.price, 0))
+  readonly items = signal<CartItem[]>([]);
+  readonly total = computed(() =>
+    this.items().reduce((sum, item) => sum + item.price, 0),
+  );
 
   addItem(item: CartItem) {
-    this.items.update(items => [...items, item])
+    this.items.update((items) => [...items, item]);
   }
 }
 ```
@@ -91,13 +93,15 @@ Do not store state that can be derived from other state. Duplicate mutable state
 
 ```typescript
 export class ProductsComponent {
-  readonly products = signal<Product[]>([])
-  readonly selectedCategory = signal<string>('all')
-  filteredProducts: Product[] = []
+  readonly products = signal<Product[]>([]);
+  readonly selectedCategory = signal<string>("all");
+  filteredProducts: Product[] = [];
 
   setCategory(category: string) {
-    this.selectedCategory.set(category)
-    this.filteredProducts = this.products().filter(product => category === 'all' || product.category === category)
+    this.selectedCategory.set(category);
+    this.filteredProducts = this.products().filter(
+      (product) => category === "all" || product.category === category,
+    );
   }
 }
 ```
@@ -106,14 +110,14 @@ export class ProductsComponent {
 
 ```typescript
 export class ProductsComponent {
-  readonly products = signal<Product[]>([])
-  readonly selectedCategory = signal<string>('all')
+  readonly products = signal<Product[]>([]);
+  readonly selectedCategory = signal<string>("all");
   readonly filteredProducts = computed(() =>
-    this.products().filter(product => {
-      const category = this.selectedCategory()
-      return category === 'all' || product.category === category
-    })
-  )
+    this.products().filter((product) => {
+      const category = this.selectedCategory();
+      return category === "all" || product.category === category;
+    }),
+  );
 }
 ```
 
@@ -132,9 +136,7 @@ Avoid method calls in templates when the method performs filtering, sorting, map
 **Incorrect:**
 
 ```html
-<li *ngFor="let item of getVisibleItems()">
-  {{ item.name }}
-</li>
+<li *ngFor="let item of getVisibleItems()">{{ item.name }}</li>
 ```
 
 ```typescript
@@ -151,7 +153,7 @@ readonly visibleItems = computed(() => this.items().filter(item => item.visible)
 
 ```html
 @for (item of visibleItems(); track item.id) {
-  <li>{{ item.name }}</li>
+<li>{{ item.name }}</li>
 }
 ```
 
@@ -164,16 +166,14 @@ Always track stable identity in repeated collections. Without tracking, Angular 
 **Incorrect:**
 
 ```html
-<li *ngFor="let user of users">
-  {{ user.name }}
-</li>
+<li *ngFor="let user of users">{{ user.name }}</li>
 ```
 
 **Correct:**
 
 ```html
 @for (user of users(); track user.id) {
-  <li>{{ user.name }}</li>
+<li>{{ user.name }}</li>
 }
 ```
 
@@ -188,21 +188,18 @@ Use `@defer` for expensive widgets, charts, editors, or below-the-fold sections.
 **Incorrect:**
 
 ```html
-<app-sales-chart />
-<app-rich-editor />
+<app-sales-chart /> <app-rich-editor />
 ```
 
 **Correct:**
 
 ```html
 @defer (on viewport) {
-  <app-sales-chart />
+<app-sales-chart />
 } @placeholder {
-  <app-chart-skeleton />
-}
-
-@defer (when isEditing()) {
-  <app-rich-editor />
+<app-chart-skeleton />
+} @defer (when isEditing()) {
+<app-rich-editor />
 }
 ```
 
@@ -221,21 +218,27 @@ When new user input should cancel prior requests, use `switchMap`. This is commo
 **Incorrect:**
 
 ```typescript
-this.searchControl.valueChanges.subscribe(term => {
-  this.http.get<SearchResult[]>('/api/search', { params: { q: term } }).subscribe(results => {
-    this.results.set(results)
-  })
-})
+this.searchControl.valueChanges.subscribe((term) => {
+  this.http
+    .get<SearchResult[]>("/api/search", { params: { q: term } })
+    .subscribe((results) => {
+      this.results.set(results);
+    });
+});
 ```
 
 **Correct:**
 
 ```typescript
-this.searchControl.valueChanges.pipe(
-  debounceTime(200),
-  distinctUntilChanged(),
-  switchMap(term => this.http.get<SearchResult[]>('/api/search', { params: { q: term } }))
-).subscribe(results => this.results.set(results))
+this.searchControl.valueChanges
+  .pipe(
+    debounceTime(200),
+    distinctUntilChanged(),
+    switchMap((term) =>
+      this.http.get<SearchResult[]>("/api/search", { params: { q: term } }),
+    ),
+  )
+  .subscribe((results) => this.results.set(results));
 ```
 
 Reference: [RxJS switchMap](https://rxjs.dev/api/operators/switchMap)
@@ -248,18 +251,18 @@ Prefer `takeUntilDestroyed()` instead of manual subscription arrays or forgettin
 
 ```typescript
 export class DashboardComponent implements OnDestroy {
-  private readonly subscriptions: Subscription[] = []
+  private readonly subscriptions: Subscription[] = [];
 
   ngOnInit() {
     this.subscriptions.push(
-      this.metricsService.metrics$.subscribe(metrics => {
-        this.metrics.set(metrics)
-      })
-    )
+      this.metricsService.metrics$.subscribe((metrics) => {
+        this.metrics.set(metrics);
+      }),
+    );
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe())
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 }
 ```
@@ -268,12 +271,12 @@ export class DashboardComponent implements OnDestroy {
 
 ```typescript
 export class DashboardComponent {
-  private readonly destroyRef = inject(DestroyRef)
+  private readonly destroyRef = inject(DestroyRef);
 
   ngOnInit() {
     this.metricsService.metrics$
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(metrics => this.metrics.set(metrics))
+      .subscribe((metrics) => this.metrics.set(metrics));
   }
 }
 ```
@@ -293,11 +296,9 @@ For feature routes, prefer lazy entry points with `loadComponent` or `loadChildr
 **Incorrect:**
 
 ```typescript
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from "./admin/admin.component";
 
-export const routes: Routes = [
-  { path: 'admin', component: AdminComponent }
-]
+export const routes: Routes = [{ path: "admin", component: AdminComponent }];
 ```
 
 **Correct:**
@@ -305,10 +306,11 @@ export const routes: Routes = [
 ```typescript
 export const routes: Routes = [
   {
-    path: 'admin',
-    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
-  }
-]
+    path: "admin",
+    loadComponent: () =>
+      import("./admin/admin.component").then((m) => m.AdminComponent),
+  },
+];
 ```
 
 Reference: [Angular Routing](https://angular.dev/guide/routing)
@@ -321,11 +323,11 @@ If a route cannot render meaningfully without initial data, use a resolver or ro
 
 ```typescript
 export class OrderDetailComponent {
-  readonly order = signal<Order | null>(null)
+  readonly order = signal<Order | null>(null);
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!
-    this.ordersService.getOrder(id).subscribe(order => this.order.set(order))
+    const id = this.route.snapshot.paramMap.get("id")!;
+    this.ordersService.getOrder(id).subscribe((order) => this.order.set(order));
   }
 }
 ```
@@ -333,17 +335,18 @@ export class OrderDetailComponent {
 **Correct:**
 
 ```typescript
-export const orderResolver: ResolveFn<Order> = route => {
-  return inject(OrdersService).getOrder(route.paramMap.get('id')!)
-}
+export const orderResolver: ResolveFn<Order> = (route) => {
+  return inject(OrdersService).getOrder(route.paramMap.get("id")!);
+};
 
 export const routes: Routes = [
   {
-    path: 'orders/:id',
-    loadComponent: () => import('./order-detail.component').then(m => m.OrderDetailComponent),
-    resolve: { order: orderResolver }
-  }
-]
+    path: "orders/:id",
+    loadComponent: () =>
+      import("./order-detail.component").then((m) => m.OrderDetailComponent),
+    resolve: { order: orderResolver },
+  },
+];
 ```
 
 Reference: [Angular Routing Data Resolvers](https://angular.dev/guide/routing/common-router-tasks#pre-fetching-component-data)
@@ -362,18 +365,18 @@ For forms with validation, dynamic rules, or submission workflows, use typed rea
 
 ```typescript
 form = new FormGroup({
-  name: new FormControl(''),
-  email: new FormControl('')
-})
+  name: new FormControl(""),
+  email: new FormControl(""),
+});
 ```
 
 **Correct:**
 
 ```typescript
 form = new FormGroup({
-  name: new FormControl<string>('', { nonNullable: true }),
-  email: new FormControl<string>('', { nonNullable: true })
-})
+  name: new FormControl<string>("", { nonNullable: true }),
+  email: new FormControl<string>("", { nonNullable: true }),
+});
 ```
 
 Reference: [Angular Typed Forms](https://angular.dev/guide/forms/typed-forms)

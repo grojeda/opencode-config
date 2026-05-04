@@ -12,11 +12,9 @@ Prefer lazy route entry points for feature screens.
 **Incorrect (eager route import):**
 
 ```typescript
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from "./admin/admin.component";
 
-export const routes: Routes = [
-  { path: 'admin', component: AdminComponent }
-]
+export const routes: Routes = [{ path: "admin", component: AdminComponent }];
 ```
 
 **Correct (lazy route component):**
@@ -24,10 +22,11 @@ export const routes: Routes = [
 ```typescript
 export const routes: Routes = [
   {
-    path: 'admin',
-    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
-  }
-]
+    path: "admin",
+    loadComponent: () =>
+      import("./admin/admin.component").then((m) => m.AdminComponent),
+  },
+];
 ```
 
 Reference: [Angular Routing](https://angular.dev/guide/routing)

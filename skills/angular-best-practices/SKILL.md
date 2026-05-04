@@ -14,6 +14,7 @@ Practical Angular guidance for agents and LLMs. Focuses on modern Angular patter
 ## When to Apply
 
 Use this skill when:
+
 - Creating Angular components, directives, pipes, or services
 - Refactoring Angular applications toward standalone APIs
 - Reviewing code for change-detection or template performance issues
@@ -22,13 +23,13 @@ Use this skill when:
 
 ## Rule Categories by Priority
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | Change Detection and State | CRITICAL | `change-` |
-| 2 | Templates and Rendering | HIGH | `template-` |
-| 3 | RxJS and Async Flows | HIGH | `rxjs-` |
-| 4 | Routing and Bundle Size | MEDIUM-HIGH | `routing-` |
-| 5 | Forms and Component APIs | MEDIUM | `forms-` |
+| Priority | Category                   | Impact      | Prefix      |
+| -------- | -------------------------- | ----------- | ----------- |
+| 1        | Change Detection and State | CRITICAL    | `change-`   |
+| 2        | Templates and Rendering    | HIGH        | `template-` |
+| 3        | RxJS and Async Flows       | HIGH        | `rxjs-`     |
+| 4        | Routing and Bundle Size    | MEDIUM-HIGH | `routing-`  |
+| 5        | Forms and Component APIs   | MEDIUM      | `forms-`    |
 
 ## Quick Reference
 
@@ -67,6 +68,7 @@ rules/template-track-identity.md
 ```
 
 Each rule includes:
+
 - What to do and why it matters
 - Incorrect example
 - Correct example

@@ -29,6 +29,8 @@ Workflow:
 4. Fix plan
    - Use `planning-agent` to write the smallest targeted change set with exact files, symbols, constraints against drive-by refactors, and the most relevant verification.
    - The plan must be implementation-ready and stay within a single narrow fix.
+   - The fix plan MUST be saved as `plans/{feature-name}/plan.md` before approval.
+   - The saved plan must include the root-cause hypothesis, affected files, exact fix scope, constraints, and verification.
 
 5. Critique
    - Use `reviewer-agent` when the risk is non-trivial, the fix touches shared code, or the hypothesis depends on subtle assumptions.
@@ -36,13 +38,16 @@ Workflow:
    - Use the `question` tool to confirm whether to proceed, revise, or stop before final edit approval.
 
 6. Approval gate
-   - Present the final approved plan concisely.
-   - Use the `question` tool to ask for exactly one final `[y/N/edit]` before any delegated edits begin.
+   - Present the path to the saved fix plan.
+   - Summarize the final approved plan concisely.
+   - Use the `question` tool to ask for exactly one final `[y/N/edit]` to approve the saved plan file before any delegated edits begin.
+   - If the user selects `edit`, revise the plan file before asking again.
 
 7. Execution
    - After approval, delegate the plan to `implementation-agent`.
    - If implementation reveals that the plan is incomplete, ambiguous, or contradicted by the codebase, stop and re-plan from evidence instead of improvising.
-   - If the main failure is a broken or incomplete test rather than product code, or if implementation causes targeted tests to fail, hand off the minimal repair loop to `test-fixer-agent`.
+   - If the main failure is a broken or incomplete test rather than product code, hand off the minimal repair loop to `test-fixer-agent`.
+   - If implementation causes targeted tests to fail, allow `implementation-agent` to fix only obvious, local, minimal failures within the approved plan; route to `test-fixer-agent` when the failure is unclear, repeated, non-local, integration-related, or outside the approved scope.
 
 8. Verify and wrap
    - Use `verifier-agent` to audit the implemented change against the approved plan when the change is non-trivial.

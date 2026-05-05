@@ -25,11 +25,15 @@ Workflow:
 3. Tiny plan
    - Use `planning-agent` to produce one compact execution track with the change goal, exact files when known, constraints, and the smallest useful verification.
    - Highlight the main decisions first.
+   - If the change requires an approval gate, ensure the final tiny plan is saved as `plans/{feature-name}/plan.md` before asking for approval.
+   - For purely mechanical, unambiguous, non-destructive changes where approval is skipped, a persisted plan file is optional.
    - Use the `question` tool to confirm or revise the plan before moving to edit approval when the plan still has ambiguity.
 
 4. Approval gate
    - Present the final one-track plan concisely.
    - Skip the approval gate when the change is mechanical, unambiguous, and non-destructive.
+   - When approval is required, approve the saved plan file, not only a chat summary.
+   - Include the plan path in the approval prompt.
    - Use the `question` tool to ask for exactly one final `[y/N/edit]` before any delegated edits begin when the change is ambiguous, destructive, user-visible in a risky way, or otherwise requires approval by workflow or policy.
 
 5. Execute

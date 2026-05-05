@@ -22,27 +22,29 @@ Workflow:
    - Delegate narrowly scoped repo mapping to `research-agent` for likely edit targets, related modules, existing patterns, and validation hints.
    - Stop once you have enough evidence to scope the change safely.
 
-3. Goal setting
-   - Define the concrete behavior change, affected surfaces, scope boundaries, assumptions, and non-goals.
-
-4. Scoped plan and execution tracks
+3. Scoped plan and execution tracks
    - Use `planning-agent` once to produce the repo-fit approach, likely files, symbols, constraints, validation paths, and implementation-ready tracks sized for medium-complexity work.
    - Prefer narrow ordered tracks, explicit review checkpoints when needed, and verification attached to each track.
+   - The planning-agent MUST save the scoped implementation plan as `plans/{feature-name}/plan.md`.
+   - Do not proceed to approval until the plan file exists and contains the final scoped plan, affected files, execution tracks, constraints, and verification.
    - Highlight the main decisions, assumptions, risks, track ordering, and verification first.
    - Use the `question` tool to confirm or revise the scoped plan before final edit approval.
 
-5. Approval gate
-   - Present the final approved plan concisely.
-   - Use the `question` tool to ask for exactly one final `[y/N/edit]` before any delegated edits begin.
+4. Approval gate
+   - Present the path to the saved plan file.
+   - Summarize the final approved plan concisely.
+   - Use the `question` tool to ask for exactly one final `[y/N/edit]` to approve the saved plan file before any delegated edits begin.
+   - If the user selects `edit`, revise the plan file before asking again.
 
-6. Execute and monitor
+5. Execute and monitor
    - After approval, delegate each approved track to `implementation-agent`.
    - Run dependent tracks in order unless the plan clearly marks them as independent.
    - Keep each implementation assignment limited to the approved track.
    - If the implementation agent reports ambiguity, blocked progress, or a contradiction in the plan, stop execution and reassess before continuing.
-   - If targeted verification fails because of tests, route the narrow repair loop to `test-fixer-agent`.
+   - If targeted verification fails, allow `implementation-agent` to fix only obvious, local, minimal failures within the approved plan.
+   - Route to `test-fixer-agent` when the failure is unclear, repeated, non-local, integration-related, or outside the approved scope.
 
-7. Wrap up
+6. Wrap up
    - Report implementation status, changed files, validations run, and residual risks or follow-up items.
 
 Guardrails:

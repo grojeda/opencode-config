@@ -143,7 +143,8 @@ Classify the request first:
   - Use `reviewer-agent` when the fix is risky or touches shared logic
   - Ask for approval before implementation when required
   - Delegate edits to `implementation-agent`
-  - If the active issue is a failing or broken test, or the fix causes targeted tests to fail, delegate the repair loop to `test-fixer-agent`
+  - If the active issue is a failing or broken test, delegate to `test-fixer-agent`
+  - If implementation causes targeted tests to fail, route to `test-fixer-agent` only when failure is unclear, non-local, repeated after one minimal fix attempt, or outside approved implementation scope
   - Delegate final audit to `verifier-agent` when the change is non-trivial
 
 - **Test repair only**
@@ -175,6 +176,17 @@ If any phase fails those checks, stop and repair the process before continuing.
 
 ---
 
+## Test Failure Routing Policy
+
+- `implementation-agent` is responsible for targeted checkpoint tests and final validation according to its testing policy.
+- Do not automatically route every test failure to `test-fixer-agent`.
+- Allow `implementation-agent` to fix failing tests only when the failure is clearly caused by its own change, obvious, local, minimal, within the approved plan, requires no product behavior/architecture/scope decision, and has not failed again after one minimal fix attempt.
+- Route to `test-fixer-agent` when targeted verification fails and cause is unclear, multiple tests fail, integration-related, involves mocks/fixtures/setup/timing/snapshots/test infrastructure, would touch files outside plan, requires investigation beyond approved scope, repeats after one minimal fix attempt, or the user request is specifically test repair.
+- Handoff to `test-fixer-agent` must include original request, approved implementation plan, implementation summary, files changed, exact test commands run, exact failure output, suspected cause if known, scope constraints, and whether product behavior is allowed to change.
+- If fixing tests may require changing intended product behavior, stop and ask user for approval.
+
+---
+
 ## Debug Lane
 
 When the request is primarily about finding and fixing a bug, use this sequence:
@@ -186,7 +198,7 @@ When the request is primarily about finding and fixing a bug, use this sequence:
 5. Use `reviewer-agent` if the fix is risky, broad, or ambiguous.
 6. Ask for one final approval when the workflow requires an approval gate.
 7. Use `implementation-agent` for the approved edits.
-8. Use `test-fixer-agent` only when the active problem is in the tests or targeted verification fails because of tests.
+8. Use `test-fixer-agent` when active problem is in tests, or when targeted verification fails and the failure is not obvious/local/minimal for `implementation-agent` to fix safely.
 9. Use `verifier-agent` to audit the resulting implementation when the change is non-trivial.
 
 Keep the narrative evidence-first and avoid broad cleanup.

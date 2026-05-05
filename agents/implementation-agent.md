@@ -140,6 +140,15 @@ For each step in the plan:
 
 ---
 
+## Reporting Compression Policy
+
+- Use caveman-full only for progress updates and final summaries.
+- Never compress code, diffs, commands, test names, file paths, error output, plan requirements, acceptance criteria, or safety warnings.
+- Do not compress questions that ask for clarification or approval.
+- If compressed wording could obscure whether the plan was followed, use normal clear prose.
+
+---
+
 ## Output Constraints
 
 - Output must be complete and production-ready.

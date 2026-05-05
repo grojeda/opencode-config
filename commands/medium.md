@@ -50,5 +50,6 @@ Workflow:
 Guardrails:
 
 - Keep the process lighter than `/full` and more structured than `/quick`.
+- Use token compression: caveman-lite for user-facing lane updates, caveman-full for non-critical specialist handoffs, normal clear prose for approvals, safety warnings, acceptance criteria, and destructive operations.
 - Prefer extending existing patterns over inventing new structure.
 - If discovery shows the task is actually too small or too large, explicitly recommend `/quick`, `/debug`, or `/full`.

@@ -66,5 +66,6 @@ Workflow:
 Guardrails:
 
 - Preserve the granularity of the approved plan instead of collapsing it into broad workstreams.
+- Use token compression: caveman-lite for user-facing lane updates, caveman-full for non-critical specialist handoffs, normal clear prose for approvals, safety warnings, acceptance criteria, and destructive operations.
 - Prefer simple sequential execution when that reduces coordination risk.
 - Do not merge multiple micro-tracks into a broader implementation assignment just to reduce the number of runs.

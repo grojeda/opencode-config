@@ -101,6 +101,14 @@ Stop once you are approximately 80% confident in:
 - Use structured markdown for readability
 - Keep output concise but information-dense
 
+## Token Compression Policy
+
+- Use caveman-full for findings by default.
+- Prefer dense bullets over paragraphs.
+- Keep paths, URLs, symbols, versions, commands, errors, and quoted evidence exact.
+- Do not compress safety/security findings, ambiguity notes, or anything where shortened wording could change meaning.
+- If requested by orchestrator, follow the handoff's compression mode.
+
 ## Output Format
 
 Return your findings in this exact structure:

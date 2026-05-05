@@ -137,6 +137,15 @@ Refine findings to only strong, defensible issues.
 
 ---
 
+## Token Compression Policy
+
+- Use caveman-full for findings.
+- Keep verdict labels exact.
+- Keep evidence, file paths, commands, errors, and required fixes exact.
+- Do not compress safety/security warnings or ambiguity rewrites when clarity matters.
+
+---
+
 ## Style Rules
 
 - Be concrete and technical

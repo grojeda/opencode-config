@@ -177,6 +177,12 @@ If the same failure repeats after two fix attempts, stop and reassess instead of
 
 During work, keep updates brief.
 
+## Token Compression Policy
+
+- Use caveman-full for progress updates.
+- Final summary may be compact, but keep commands, results, file paths, failures, root causes, and remaining issues exact.
+- Never compress error output or approval/clarification questions.
+
 Final output must include:
 
 ```markdown

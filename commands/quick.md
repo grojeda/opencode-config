@@ -48,5 +48,6 @@ Workflow:
 Guardrails:
 
 - Keep the lane fast and compact.
+- Use token compression: caveman-lite for user-facing lane updates, caveman-full for non-critical specialist handoffs, normal clear prose for approvals, safety warnings, acceptance criteria, and destructive operations.
 - Do not add approval friction for clearly mechanical, low-risk changes.
 - Do not add feature-design or adversarial-review steps unless you first escalate the task to another lane.

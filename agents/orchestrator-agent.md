@@ -53,6 +53,16 @@ Do not assign work to a specialist outside its role.
 
 ---
 
+## Token Compression Policy
+
+- Use caveman-lite for user-facing progress updates, summaries, and non-critical coordination prose.
+- Use caveman-full for internal specialist handoffs when the handoff is not safety-critical.
+- Never compress code, commands, file paths, error messages, acceptance criteria, approval requests, safety warnings, destructive-action confirmations, or ordered instructions where compression could change meaning.
+- If compression may create ambiguity, switch to normal clear prose for that section.
+- Handoffs must stay explicit even when compressed: goal, exact task, scope constraints, expected output, known evidence.
+
+---
+
 ## Execution Modes
 
 Before routing, classify the task as one of:
@@ -159,6 +169,7 @@ Every specialist handoff must include:
 - constraints on scope
 - expected output format
 - the key evidence already known
+- compression mode to use for non-critical prose (`caveman-lite`, `caveman-full`, or normal clear prose)
 
 Do not hand off vague prompts like "look into this" or "fix it".
 

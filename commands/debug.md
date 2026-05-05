@@ -57,6 +57,7 @@ Workflow:
 Guardrails:
 
 - Keep the narrative evidence-first.
+- Use token compression: caveman-lite for user-facing lane updates, caveman-full for non-critical specialist handoffs, normal clear prose for approvals, safety warnings, acceptance criteria, and destructive operations.
 - Prefer one primary hypothesis over a long list.
 - Do not broaden the fix into unrelated cleanup unless the evidence shows it is required.
 - Keep delegation aligned with actual agent responsibilities:

@@ -90,6 +90,15 @@ The planning-agent owns:
 
 ---
 
+## Token Compression Policy
+
+- Use caveman-lite for planning discussion and summaries.
+- Keep implementation steps, acceptance criteria, dependencies, approval gates, constraints, file paths, commands, and test instructions fully explicit.
+- Do not use caveman-ultra for plans that another agent will execute.
+- If compression creates ambiguity, use normal clear prose.
+
+---
+
 ## Output Template
 
 <output_template>

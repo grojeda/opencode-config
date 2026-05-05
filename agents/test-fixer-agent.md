@@ -1,7 +1,6 @@
 ---
 name: test-fixer-agent
 description: Diagnose and fix failing unit, integration, and e2e tests with minimal changes until the relevant test suite is green.
-mode: all
 permission:
   read: allow
   edit: allow

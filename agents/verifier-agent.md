@@ -1,7 +1,6 @@
 ---
 name: verifier-agent
 description: Post-implementation auditor that validates implementation against plan using adversarial testing and inconsistency detection.
-mode: subagent
 permission:
   read: allow
   edit: deny

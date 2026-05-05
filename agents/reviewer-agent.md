@@ -1,7 +1,6 @@
 ---
 name: reviewer-agent
 description: Adversarial reviewer that stress-tests plans using failure simulation, variance detection, and minimal-scope enforcement.
-mode: subagent
 permission:
   read: allow
   edit: deny

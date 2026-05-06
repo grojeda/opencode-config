@@ -61,6 +61,38 @@ User Request
 
 ---
 
+## Prerequisites
+
+Before installing this OpenCode configuration, make sure you have these tools installed.
+
+### Required
+
+| Tool | Purpose |
+|------|---------|
+| OpenCode | Main CLI/runtime used by this configuration |
+| Node.js | Required for plugins and skills |
+| npm | Installs package dependencies |
+| Git | Clones and updates this repository |
+
+### Recommended
+
+| Tool | Purpose |
+|------|---------|
+| GitHub CLI (`gh`) | Required for PR review workflows |
+| Warp Terminal | Recommended for `@warp-dot-dev/opencode-warp` |
+| ripgrep (`rg`) | Faster codebase search |
+| Bash/Zsh/PowerShell | Working shell environment |
+
+### Verify Your Environment
+
+```bash
+opencode --version
+node --version
+npm --version
+git --version
+
+---
+
 ## Installation & Setup
 
 ### Using This Configuration
@@ -153,9 +185,9 @@ The orchestrator classifies work into three lanes:
 
 | Lane | Use For | Flow |
 |------|---------|------|
-| **Fast Lane** | Small changes, single-file edits, docs, obvious fixes | `research` → `planning` → `implementation` |
-| **Standard Lane** | Multi-file changes, bug fixes, shared abstractions, behavior changes | `research` → `planning` → `review` → `implementation` → `verify` |
-| **High-Risk Lane** | Migrations, auth/security, data integrity, payments, public APIs | `research` → `planning` → `review` → **approval** → `implementation` → `verify` |
+| **Quick Lane** | Small changes, single-file edits, docs, obvious fixes | `research` → `planning` → `implementation` |
+| **Medium Lane** | Multi-file changes, bug fixes, shared abstractions, behavior changes | `research` → `planning` → `review` → `implementation` → `verify` |
+| **Full Lane** | Migrations, auth/security, data integrity, payments, public APIs | `research` → `planning` → `review` → **approval** → `implementation` → `verify` |
 
 ### Debug Lane
 

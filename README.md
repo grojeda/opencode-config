@@ -17,7 +17,6 @@
 - [Configuration Details](#configuration-details)
 - [Usage Examples](#usage-examples)
 
-
 ---
 
 ## Overview
@@ -32,7 +31,7 @@ This configuration transforms OpenCode into a **multi-agent development system**
 
 ### Architecture
 
-```
+``` md
 User Request
     │
     ▼
@@ -69,24 +68,28 @@ User Request
 This configuration lives in `~/.config/opencode`. To apply it:
 
 1. **Backup your existing config** (if any):
+
    ```bash
    cp -r ~/.config/opencode ~/.config/opencode.backup
    ```
 
 2. **Clone or copy this configuration**:
+
    ```bash
    git clone <repository-url> ~/.config/opencode-new
    cp -r ~/.config/opencode-new/* ~/.config/opencode/
    ```
 
 3. **Verify**:
+
    ```bash
    opencode --version
    ```
 
 ### Configuration Structure
 
-```
+``` md
+
 ~/.config/opencode/
 ├── opencode.json              # Main config: agents, permissions, plugin
 ├── tui.json                   # TUI settings
@@ -118,6 +121,7 @@ This configuration lives in `~/.config/opencode`. To apply it:
 │   └── vercel-react-best-practices/
 └── package.json               # Skill dependencies
 ```
+
 ---
 
 ## Agents Reference
@@ -312,11 +316,12 @@ The `@warp-dot-dev/opencode-warp` plugin provides enhanced capabilities integrat
 
 ### Example 1: Quick Fix
 
-```
+``` md
 /quick add null check to parseUser in auth.ts
 ```
 
 The orchestrator:
+
 1. Confirms the task is small enough for quick lane
 2. Gathers minimal context via `research-agent`
 3. Creates a tiny plan with `planning-agent`
@@ -326,7 +331,7 @@ The orchestrator:
 
 ### Example 2: Feature Development
 
-```
+``` md
 /full add dark mode toggle to settings page
 ```
 
@@ -342,7 +347,7 @@ The orchestrator:
 
 ### Example 3: Debugging
 
-```
+``` md
 /debug API returns 500 when creating orders with empty cart
 ```
 
@@ -359,7 +364,7 @@ The orchestrator:
 
 ### Example 4: PR Review
 
-```
+``` md
 @pr-review-agent review PR #42
 ```
 
@@ -377,4 +382,3 @@ The PR review agent:
 3. **Review plans before approving** — the approval gate is your checkpoint
 4. **Trust the pipeline** — research before planning, review before implementation, verify after
 5. **Use caveman mode** for token efficiency when working with large contexts
-

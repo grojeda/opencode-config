@@ -2,6 +2,48 @@
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["@warp-dot-dev/opencode-warp"],
   "autoupdate": "notify",
+  "model": "opencode-go/qwen3.6-plus",
+  "small_model": "opencode-go/qwen3.5-plus",
+  "agent": {
+    "orchestrator-agent": {
+      "model": "opencode-go/qwen3.6-plus",
+      "temperature": 0.1
+    },
+    "planning-agent": {
+      "model": "openai/gpt-5.5",
+      "temperature": 0.1,
+      "variant": "xhigh"
+    },
+    "research-agent": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "temperature": 0.1
+    },
+    "reviewer-agent": {
+      "model": "opencode-go/glm-5.1",
+      "temperature": 0.1
+    },
+    "pr-review-agent": {
+      "model": "opencode-go/glm-5.1",
+      "temperature": 0.1
+    },
+    "implementation-agent": {
+      "model": "opencode-go/kimi-k2.6",
+      "temperature": 0.1
+    },
+    "test-fixer-agent": {
+      "model": "opencode-go/deepseek-v4-pro",
+      "temperature": 0.1
+    },
+    "verifier-agent": {
+      "model": "openai/gpt-5.5",
+      "temperature": 0.1,
+      "variant": "xhigh"
+    },
+    "prompt-agent": {
+      "model": "opencode-go/qwen3.6-plus",
+      "temperature": 0.2
+    }
+  },
   "permission": {
     "bash": "ask",
     "edit": "allow"

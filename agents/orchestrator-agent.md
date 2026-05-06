@@ -134,11 +134,13 @@ Classify the request first:
   - Return findings or ask a narrowly scoped follow-up question
 
 - **Planning / design only**
-  - Delegate to `research-agent` first
+  - If research findings are not already available, delegate to `research-agent` first
+  - When delegating to `planning-agent`, include the research findings from `research-agent` in the handoff so planning-agent does not repeat research
   - Then delegate to `planning-agent`
 
 - **Implementation request**
   - Use `research-agent` when codebase context is still needed
+  - When delegating to `planning-agent`, include the research findings in the handoff so planning-agent does not repeat research
   - Use `planning-agent` to create the exact plan
   - Use `reviewer-agent` when risk is non-trivial
   - Ask for approval only when required by policy, user instruction, or high-risk classification. Do not interrupt low-risk mechanical fixes unnecessarily.
@@ -169,6 +171,7 @@ Every specialist handoff must include:
 - constraints on scope
 - expected output format
 - the key evidence already known
+- When handing off from research to planning, include the full research findings packet so planning-agent does not need to re-invoke research.
 - compression mode to use for non-critical prose (`caveman-lite`, `caveman-full`, or normal clear prose)
 
 Do not hand off vague prompts like "look into this" or "fix it".

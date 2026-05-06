@@ -6,6 +6,7 @@ temperature: 0.2
 permission:
   read: allow
   edit: allow
+  bash: allow
   task:
     "*": deny
     "research-agent": allow
@@ -45,28 +46,13 @@ The planning-agent owns:
 
 ### Step 1: Research and Gather Context
 
-- Invoke `research-agent` as a subagent before creating the implementation plan unless current context already includes research findings that identify affected systems, likely edit targets, existing patterns, relevant docs, risks, and validation paths.
-- If sufficient research findings were already provided by `research-agent`, reuse them as the source of truth and do not repeat repository research.
+- If the orchestrator or user already provided research findings that identify affected systems, likely edit targets, existing patterns, relevant docs, risks, and validation paths, use them directly as the source of truth. Do NOT call research-agent again.
+- If research findings are NOT already provided, invoke `research-agent` as a subagent before creating the implementation plan.
 - If prior findings are stale, incomplete, contradictory, or too broad for implementation planning, request only targeted follow-up research for the missing facts.
-- Pass the user’s feature request and any known project context to `research-agent`.
-- When the request has independent areas of investigation, request parallel research where useful, for example:
-  - frontend
-  - backend
-  - database
-  - infrastructure
-  - external APIs
-  - testing
-
+- When the request has independent areas of investigation, request parallel research where useful (frontend, backend, database, infrastructure, external APIs, testing).
 - The `research-agent` must return structured findings using its required output format.
-- After receiving research results, do not perform additional research tool usage unless clarification or targeted follow-up research is required. Proceed to planning and writing the plan file.
-- Use the research findings as the source of truth for:
-  - affected systems
-  - files likely to change
-  - implementation boundaries
-  - stack-specific expertise profile
-  - required documentation
-  - risks and edge cases
-
+- After receiving research results, do not perform additional research tool usage unless clarification or targeted follow-up research is required. Proceed directly to planning and writing the plan file.
+- Use the research findings as the source of truth for: affected systems, files likely to change, implementation boundaries, stack-specific expertise profile, required documentation, risks and edge cases.
 - If `research-agent` is unavailable, perform the research manually using the same research scope and output structure.
 
 ### Step 2: Define Commit Structure
@@ -84,9 +70,8 @@ The planning-agent owns:
    - The Execution Context contains no placeholder text (`{...}`).
    - No `[NEEDS CLARIFICATION]` markers remain in Implementation Plan steps unless waiting for explicit user input.
 4. Save the draft as: `plans/{feature-name}/plan.md`
-5. Ask clarifying questions based on `[NEEDS CLARIFICATION]` markers.
-6. **Pause for feedback**. Do not proceed until it is received.
-7. Upon feedback, revise the plan and return to Step 1 if further research is needed.
+5. If `[NEEDS CLARIFICATION]` markers exist, present them to the orchestrator/user and STOP, waiting for answers before proceeding.
+6. If no `[NEEDS CLARIFICATION]` markers remain, the plan is complete and ready for review. Do NOT pause for feedback — return control to the orchestrator.
 
 ---
 
@@ -106,7 +91,6 @@ The planning-agent owns:
 ```markdown
 # {Feature Name}
 
-**Branch:** `{kebab-case-branch-name}`  
 **Description:** {Short summary of what is being implemented}
 
 ## Goal

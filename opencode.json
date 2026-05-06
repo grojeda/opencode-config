@@ -53,7 +53,14 @@
     "prune": true
   },
   "watcher": {
-    "ignore": ["node_modules/**", "dist/**", ".git/**", "build/**", ".next/**", "coverage/**"]
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "build/**",
+      ".next/**",
+      "coverage/**"
+    ]
   },
   "lsp": true,
   "formatter": true

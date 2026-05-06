@@ -1,4 +1,4 @@
-# OpenCode Enhanced Configuration
+# OpenCode Configuration
 
 [![OpenCode](https://img.shields.io/badge/OpenCode-Configuration-blue)](https://opencode.ai)
 [![Plugin](https://img.shields.io/badge/Plugin-warp--dev-green)](https://github.com/warp-dot-dev/opencode-warp)

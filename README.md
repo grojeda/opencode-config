@@ -196,22 +196,6 @@ All commands run through `orchestrator-agent` as subtasks and follow this patter
 6. **Execution** — `implementation-agent` follows the plan
 7. **Verification** — `verifier-agent` audits the result (skipped in quick lane for trivial changes)
 
-### Quick Lane (`/quick`)
-
-Fastest path. Minimal context gathering, one implementation track. Approval skipped for mechanical, unambiguous, non-destructive changes.
-
-### Medium Lane (`/medium`)
-
-Lightweight discovery, scoped plan with ordered tracks, approval gate, sequential execution. Lighter than `/full`, more structured than `/quick`.
-
-### Full Lane (`/full`)
-
-Full discovery, adversarial review, multi-track execution plan with dependencies, explicit approval gate, post-implementation verification.
-
-### Debug Lane (`/debug`)
-
-Evidence-first debugging: triage → map failure → hypothesis → fix plan → critique → approval → execution → verify. Saves plan to `plans/{feature-name}/plan.md`.
-
 ---
 
 ## Configuration Details

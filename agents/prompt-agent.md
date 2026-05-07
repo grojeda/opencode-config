@@ -4,7 +4,7 @@ description: Help refine, debug, critique, and improve OpenCode agent prompts, c
 temperature: 0.2
 permission:
   read: allow
-  edit: deny
+  edit: allow
   bash: deny
   question: allow
 ---

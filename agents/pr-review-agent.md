@@ -6,16 +6,22 @@ permission:
   read: allow
   edit: deny
   bash:
-    "*": ask
-    "git status*": allow
+    "cat *": allow
+    "find *": allow
+    "gh pr checks*": allow
+    "gh pr diff*": allow
+    "gh pr view*": allow
     "git diff*": allow
     "git log*": allow
-    "git show*": allow
     "git merge-base*": allow
-    "gh pr view*": allow
-    "gh pr diff*": allow
-    "gh pr checks*": allow
+    "git show*": allow
+    "git status*": allow
+    "grep *": allow
+    "head *": allow
+    "ls *": allow
     "rg *": allow
+    "tail *": allow
+    "wc *": allow
   question: allow
 ---
 

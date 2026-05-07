@@ -4,6 +4,18 @@ description: Gather narrow, evidence-based repository and tooling context for de
 permission:
   read: allow
   edit: deny
+  bash:
+    "cat *": allow
+    "find *": allow
+    "git log*": allow
+    "git ls-files*": allow
+    "git show*": allow
+    "grep *": allow
+    "head *": allow
+    "ls *": allow
+    "rg *": allow
+    "tail *": allow
+    "wc *": allow
   websearch: allow
   webfetch: allow
 ---

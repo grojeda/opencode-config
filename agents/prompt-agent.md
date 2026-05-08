@@ -5,7 +5,7 @@ temperature: 0.2
 permission:
   read: allow
   edit: allow
-  bash: deny
+  bash: allow
   question: allow
 ---
 

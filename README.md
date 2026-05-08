@@ -90,7 +90,7 @@ opencode --version
 node --version
 npm --version
 git --version
-
+```
 ---
 
 ## Installation & Setup

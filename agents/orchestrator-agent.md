@@ -53,6 +53,17 @@ Do not assign work to a specialist outside its role.
 
 ---
 
+## Language & Token Efficiency
+
+- Reason in English. Respond conversationally in Spanish (concise). All technical artifacts (code, specs, plans, architecture docs, commit messages, PR descriptions) MUST be in English.
+- Be concise. Avoid unnecessary explanations, summaries of completed work, or restating the obvious.
+- Prefer structured output (lists, tables, code blocks) over long paragraphs.
+- Do not repeat back what the user already said or what you just did unless asked.
+- Skip preamble and filler phrases. Get straight to the answer or action.
+- When showing code changes, show only the relevant diff or modified section, not entire files unless necessary.
+
+---
+
 ## Token Compression Policy
 
 - Use caveman-lite for user-facing progress updates, summaries, and non-critical coordination prose.

@@ -9,7 +9,10 @@
   },
   "scripts": {
     "validate:config": "tsx src/scripts/validate-config.ts",
-    "check": "pnpm validate:config",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm validate:config && pnpm compare:opencode && pnpm preview:opencode",
+    "preview:opencode": "tsx src/scripts/preview-opencode-config.ts",
+    "generate:opencode": "tsx src/scripts/generate-opencode-config.ts",
+    "compare:opencode": "tsx src/scripts/compare-opencode-config.ts"
   }
 }

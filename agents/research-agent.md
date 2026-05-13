@@ -6,7 +6,9 @@ permission:
   edit: deny
   bash:
     "cat *": allow
+    "dir *": allow
     "find *": allow
+    "Get-ChildItem *": allow
     "git log*": allow
     "git ls-files*": allow
     "git show*": allow
@@ -15,6 +17,7 @@ permission:
     "ls *": allow
     "rg *": allow
     "tail *": allow
+    "type *": allow
     "wc *": allow
   websearch: allow
   webfetch: allow

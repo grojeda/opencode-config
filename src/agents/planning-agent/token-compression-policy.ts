@@ -1,0 +1,23 @@
+export const PLANNING_AGENT_TOKEN_COMPRESSION_POLICY = `## Token Compression Policy
+
+- Use \`caveman-lite\` only for planning discussion, interim reasoning summaries, status updates, and non-executable explanations.
+- Do **not** use compressed language for any content that another agent must execute, verify, or copy.
+- Keep the following content fully explicit and uncompressed:
+  - implementation steps
+  - acceptance criteria
+  - dependencies
+  - approval gates
+  - constraints
+  - assumptions
+  - risks and edge cases
+  - file paths
+  - commands
+  - configuration keys
+  - environment variables
+  - API names
+  - database/schema changes
+  - test instructions
+  - rollback or migration notes
+- Do **not** use \`caveman-ultra\` in implementation plans, plan files, approval gates, or execution instructions.
+- If compression could create ambiguity, misordering, missing context, or unsafe execution, use normal clear prose.
+- The final \`plans/{feature-name}/plan.md\` must be written in clear, complete, implementation-ready prose.`;

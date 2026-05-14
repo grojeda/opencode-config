@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@opencode-ai/plugin": "1.14.33"
+    "@opencode-ai/plugin": "1.14.48"
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
@@ -13,6 +13,7 @@
     "check": "pnpm typecheck && pnpm validate:config && pnpm compare:opencode && pnpm preview:opencode",
     "preview:opencode": "tsx src/scripts/preview-opencode-config.ts",
     "generate:opencode": "tsx src/scripts/generate-opencode-config.ts",
-    "compare:opencode": "tsx src/scripts/compare-opencode-config.ts"
+    "compare:opencode": "tsx src/scripts/compare-opencode-config.ts",
+    "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts"
   }
 }

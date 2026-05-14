@@ -43,3 +43,27 @@ export type AgentConfig = {
   model: ModelConfig;
   permissions: AgentPermission[];
 };
+
+export type OpenCodePermissionValue = "allow" | "deny";
+
+export type OpenCodeMarkdownAgentFrontmatter = {
+  name: AgentName;
+  description: string;
+  mode: "all" | "primary" | "subagent";
+  temperature?: number;
+  permission?: {
+    read?: OpenCodePermissionValue;
+    write?: OpenCodePermissionValue;
+    edit?: OpenCodePermissionValue;
+    bash?: OpenCodePermissionValue;
+    web?: OpenCodePermissionValue;
+    question?: OpenCodePermissionValue;
+    task?: Partial<Record<AgentName | "*", OpenCodePermissionValue>>;
+  };
+};
+
+export type AuthoredMarkdownAgent = {
+  name: AgentName;
+  frontmatter: OpenCodeMarkdownAgentFrontmatter;
+  systemPrompt: string;
+};

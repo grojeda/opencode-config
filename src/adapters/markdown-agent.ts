@@ -22,7 +22,7 @@ function renderPermissionValue(
 
 function renderYamlScalar(value: unknown): string {
   if (typeof value === "string") {
-    return JSON.stringify(value);
+    return value;
   }
 
   return String(value);

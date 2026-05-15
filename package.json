@@ -4,6 +4,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
+    "husky": "^9.1.7",
     "tsx": "^4.20.0",
     "typescript": "^5.0.0",
     "vite": "4.5.3",
@@ -13,11 +14,14 @@
     "validate:config": "tsx src/scripts/validate-config.ts",
     "generate:agents": "tsx src/scripts/generate-agents.ts",
     "generate:tmp-agents": "tsx src/scripts/generate-tmp-agents.ts",
+    "check:agents": "pnpm generate:agents && git diff --exit-code agents",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:prompts": "vitest run src/tests",
+    "precommit": "pnpm check:agents && pnpm test",
     "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm validate:config && pnpm test && pnpm preview:planning-agent",
-    "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts"
+    "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts",
+    "prepare": "husky"
   }
 }

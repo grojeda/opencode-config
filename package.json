@@ -5,13 +5,19 @@
   "devDependencies": {
     "@types/node": "^25.7.0",
     "tsx": "^4.20.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vite": "4.5.3",
+    "vitest": "^0.34.6"
   },
   "scripts": {
     "validate:config": "tsx src/scripts/validate-config.ts",
+    "generate:agents": "tsx src/scripts/generate-agents.ts",
     "generate:tmp-agents": "tsx src/scripts/generate-tmp-agents.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:prompts": "vitest run src/tests",
     "typecheck": "tsc --noEmit",
-    "check": "pnpm typecheck && pnpm validate:config && pnpm preview:planning-agent",
+    "check": "pnpm typecheck && pnpm validate:config && pnpm test && pnpm preview:planning-agent",
     "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts"
   }
 }

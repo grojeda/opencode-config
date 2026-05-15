@@ -43,6 +43,7 @@ dist/
 build/
 coverage/
 .nyc_output/
+.tmp/
 
 # OS and editor noise
 .DS_Store

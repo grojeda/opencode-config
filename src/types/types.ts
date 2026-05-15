@@ -45,18 +45,23 @@ export type AgentConfig = {
 };
 
 export type OpenCodePermissionValue = "allow" | "deny";
+export type OpenCodePermissionCommandMap = Partial<
+  Record<string, OpenCodePermissionValue>
+>;
 
 export type OpenCodeMarkdownAgentFrontmatter = {
   name: AgentName;
   description: string;
-  mode: "all" | "primary" | "subagent";
+  mode?: "all" | "primary" | "subagent";
   temperature?: number;
   permission?: {
     read?: OpenCodePermissionValue;
     write?: OpenCodePermissionValue;
     edit?: OpenCodePermissionValue;
-    bash?: OpenCodePermissionValue;
+    bash?: OpenCodePermissionValue | OpenCodePermissionCommandMap;
     web?: OpenCodePermissionValue;
+    websearch?: OpenCodePermissionValue;
+    webfetch?: OpenCodePermissionValue;
     question?: OpenCodePermissionValue;
     task?: Partial<Record<AgentName | "*", OpenCodePermissionValue>>;
   };

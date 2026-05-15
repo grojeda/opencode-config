@@ -9,6 +9,7 @@
   },
   "scripts": {
     "validate:config": "tsx src/scripts/validate-config.ts",
+    "generate:tmp-agents": "tsx src/scripts/generate-tmp-agents.ts",
     "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm validate:config && pnpm preview:planning-agent",
     "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts"

@@ -35,8 +35,11 @@ export function renderFrontmatter(
     "---",
     `name: ${renderYamlScalar(frontmatter.name)}`,
     `description: ${renderYamlScalar(frontmatter.description)}`,
-    `mode: ${renderYamlScalar(frontmatter.mode)}`,
   ];
+
+  if (frontmatter.mode !== undefined) {
+    lines.push(`mode: ${renderYamlScalar(frontmatter.mode)}`);
+  }
 
   if (frontmatter.temperature !== undefined) {
     lines.push(`temperature: ${frontmatter.temperature}`);

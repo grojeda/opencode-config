@@ -19,6 +19,7 @@
     "test:watch": "vitest",
     "test:prompts": "vitest run src/tests",
     "precommit": "pnpm check:agents && pnpm test",
+    "ci": "pnpm check:agents && pnpm typecheck && pnpm validate:config && pnpm test",
     "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm validate:config && pnpm test && pnpm preview:planning-agent",
     "preview:planning-agent": "tsx src/scripts/preview-planning-agent-prompt.ts",

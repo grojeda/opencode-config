@@ -1,0 +1,26 @@
+import { AGENT_IDENTITY } from "./identity";
+import { AGENT_BOUNDARIES } from "./boundaries";
+import { AGENT_SUBAGENT_USAGE } from "./subagent-usage";
+import { AGENT_APPROVAL_GATES } from "./approval-gates";
+import { AGENT_HANDOFF } from "./handoff";
+import { AGENT_DOMAIN_RULES } from "./domain-rules";
+import { AGENT_WORKFLOW } from "./workflow";
+import { AGENT_OUTPUT_CONTRACT } from "./output-contract";
+import { AGENT_VALIDATION } from "./validation";
+import { AGENT_FAILURE_MODES } from "./failure-modes";
+import { AGENT_TOKEN_COMPRESSION_POLICY } from "./token-compression-policy";
+import { composePromptSections } from "../shared/compose-prompt-sections";
+
+export const AGENT_SYSTEM_PROMPT = composePromptSections([
+  AGENT_IDENTITY,
+  AGENT_BOUNDARIES,
+  AGENT_SUBAGENT_USAGE,
+  AGENT_APPROVAL_GATES,
+  AGENT_HANDOFF,
+  AGENT_DOMAIN_RULES,
+  AGENT_WORKFLOW,
+  AGENT_OUTPUT_CONTRACT,
+  AGENT_VALIDATION,
+  AGENT_FAILURE_MODES,
+  AGENT_TOKEN_COMPRESSION_POLICY,
+]);

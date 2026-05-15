@@ -1,0 +1,24 @@
+import type { AuthoredMarkdownAgent } from "../types/types";
+import {
+  IMPLEMENTATION_AGENT,
+  ORCHESTRATOR_AGENT,
+  PLANNING_AGENT,
+  PR_REVIEW_AGENT,
+  PROMPT_AGENT,
+  RESEARCH_AGENT,
+  REVIEWER_AGENT,
+  TEST_FIXER_AGENT,
+  VERIFIER_AGENT,
+} from "./index";
+
+export const markdownAgents = [
+  ORCHESTRATOR_AGENT,
+  RESEARCH_AGENT,
+  PLANNING_AGENT,
+  REVIEWER_AGENT,
+  IMPLEMENTATION_AGENT,
+  VERIFIER_AGENT,
+  TEST_FIXER_AGENT,
+  PR_REVIEW_AGENT,
+  PROMPT_AGENT,
+] satisfies AuthoredMarkdownAgent[];

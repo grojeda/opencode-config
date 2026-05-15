@@ -1,0 +1,11 @@
+import type { AuthoredMarkdownAgent } from "../../types/types";
+import { AGENT_FRONTMATTER } from "./frontmatter";
+import { AGENT_SYSTEM_PROMPT } from "./system-prompt";
+
+export const AGENT = {
+  name: "pr-review-agent",
+  frontmatter: AGENT_FRONTMATTER,
+  systemPrompt: AGENT_SYSTEM_PROMPT,
+} as const satisfies AuthoredMarkdownAgent;
+
+export { AGENT as PR_REVIEW_AGENT };

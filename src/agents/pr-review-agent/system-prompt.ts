@@ -1,0 +1,20 @@
+import { AGENT_IDENTITY } from "./identity";
+import { AGENT_BOUNDARIES } from "./boundaries";
+import { AGENT_TOOL_USAGE } from "./tool-usage";
+import { AGENT_DOMAIN_RULES } from "./domain-rules";
+import { AGENT_WORKFLOW } from "./workflow";
+import { AGENT_OUTPUT_CONTRACT } from "./output-contract";
+import { AGENT_OUTPUT_TEMPLATE } from "./output-template";
+import { AGENT_VALIDATION } from "./validation";
+import { composePromptSections } from "../shared/compose-prompt-sections";
+
+export const AGENT_SYSTEM_PROMPT = composePromptSections([
+  AGENT_IDENTITY,
+  AGENT_BOUNDARIES,
+  AGENT_TOOL_USAGE,
+  AGENT_DOMAIN_RULES,
+  AGENT_WORKFLOW,
+  AGENT_OUTPUT_CONTRACT,
+  AGENT_OUTPUT_TEMPLATE,
+  AGENT_VALIDATION,
+]);

@@ -156,6 +156,42 @@ This configuration lives in `~/.config/opencode`. To apply it:
 
 ---
 
+## Agent Authoring Workflow
+
+Agent prompts are authored in TypeScript and rendered to Markdown for OpenCode.
+
+| Path | Role |
+|------|------|
+| `src/agents/` | Source of truth for agent prompts, sections, frontmatter, and output contracts |
+| `src/config/` | Source of truth for agent metadata, models, and routing |
+| `src/adapters/markdown-agent.ts` | Renderer from typed agent definitions to OpenCode Markdown |
+| `agents/*.md` | Generated runtime files consumed by OpenCode and reviewed in PRs |
+| `src/tests/` | Deterministic tests for registry, permissions, prompt invariants, and generated Markdown sync |
+
+Do not edit `agents/*.md` by hand. Update the TypeScript source, regenerate Markdown, then review the generated diff.
+
+```bash
+pnpm generate:agents
+pnpm check
+```
+
+Use this workflow when changing agent behavior:
+
+1. Edit files under `src/agents/`, `src/config/`, or `src/adapters/`.
+2. Run `pnpm generate:agents`.
+3. Review the `agents/*.md` diff; this is the final prompt OpenCode receives.
+4. Run `pnpm check`.
+5. Commit both the TypeScript source changes and the generated Markdown changes.
+
+Local pre-commit hooks run:
+
+```bash
+pnpm check:agents
+pnpm test
+```
+
+`check:agents` regenerates `agents/*.md` and fails if the generated output differs from the committed files. It does not stage files automatically.
+
 ## Agents Reference
 
 The system uses a **pipeline architecture** where the orchestrator routes work to specialists based on task type and risk level.

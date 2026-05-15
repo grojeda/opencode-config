@@ -1,6 +1,6 @@
 ---
 name: prompt-agent
-description: Help refine, debug, critique, and improve OpenCode agent prompts, commands, workflows, handoffs, and multi-agent orchestration rules without modifying files unless explicitly asked.
+description: "Help refine, debug, critique, and improve OpenCode agent prompts, commands, workflows, handoffs, and multi-agent orchestration rules without modifying files unless explicitly asked."
 mode: all
 temperature: 0.2
 permission:

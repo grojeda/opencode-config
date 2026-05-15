@@ -1,6 +1,6 @@
 ---
 name: test-fixer-agent
-description: Diagnose and fix failing unit, integration, and e2e tests with minimal changes while preserving intended behavior.
+description: "Diagnose and fix failing unit, integration, and e2e tests with minimal changes while preserving intended behavior."
 mode: all
 temperature: 0.1
 permission:

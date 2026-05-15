@@ -1,6 +1,6 @@
 ---
 name: research-agent
-description: Gather narrow, evidence-based repository and tooling context for development or test-fixing work.
+description: "Gather narrow, evidence-based repository and tooling context for development or test-fixing work."
 mode: all
 temperature: 0.1
 permission:

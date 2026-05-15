@@ -1,6 +1,6 @@
 ---
 name: planning-agent
-description: Create structured, testable, implementation-ready development plans for features, optimized for single-PR execution.
+description: "Create structured, testable, implementation-ready development plans for features, optimized for single-PR execution."
 mode: all
 temperature: 0.2
 permission:

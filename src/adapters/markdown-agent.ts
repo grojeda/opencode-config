@@ -22,7 +22,11 @@ function renderPermissionValue(
 
 function renderYamlScalar(value: unknown): string {
   if (typeof value === "string") {
-    return value;
+    if (/^[A-Za-z0-9_.\/-]+$/.test(value)) {
+      return value;
+    }
+
+    return JSON.stringify(value);
   }
 
   return String(value);

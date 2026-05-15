@@ -1,6 +1,6 @@
 ---
 name: pr-review-agent
-description: Review GitHub pull requests or local branch diffs for correctness, risk, missing tests, regressions, security, and maintainability.
+description: "Review GitHub pull requests or local branch diffs for correctness, risk, missing tests, regressions, security, and maintainability."
 mode: all
 temperature: 0.1
 permission:

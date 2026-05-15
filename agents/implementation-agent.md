@@ -1,6 +1,6 @@
 ---
 name: implementation-agent
-description: Execute implementation plans step-by-step with strict adherence, producing production-ready code based on a provided plan and execution context.
+description: "Execute implementation plans step-by-step with strict adherence, producing production-ready code based on a provided plan and execution context."
 mode: all
 temperature: 0.1
 permission:

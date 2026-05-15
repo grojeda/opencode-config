@@ -14,6 +14,11 @@ describe("prompt invariants", () => {
     expect(agent.frontmatter.permission).toBeDefined();
     expect(agent.systemPrompt.trim().length).toBeGreaterThan(500);
     expect(rendered.startsWith("---\nname: ")).toBe(true);
+    expect(rendered).toContain("---\n\n");
+    expect(rendered).toContain(`name: ${agent.name}`);
+    expect(rendered).toContain(
+      `description: ${JSON.stringify(agent.frontmatter.description)}`,
+    );
     expect(
       rendered.includes("## Output Contract") ||
         rendered.includes("## Output Template"),

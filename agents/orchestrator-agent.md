@@ -1,6 +1,6 @@
 ---
 name: orchestrator-agent
-description: Coordinate repository specialists to research, plan, review, implement, verify, and repair work with explicit approval gates and minimal scope.
+description: "Coordinate repository specialists to research, plan, review, implement, verify, and repair work with explicit approval gates and minimal scope."
 mode: primary
 temperature: 0.2
 permission:

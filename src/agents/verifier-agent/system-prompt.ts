@@ -11,8 +11,9 @@ import { AGENT_OUTPUT_TEMPLATE } from "./output-template";
 import { AGENT_VALIDATION } from "./validation";
 import { AGENT_FAILURE_MODES } from "./failure-modes";
 import { AGENT_TOKEN_COMPRESSION_POLICY } from "./token-compression-policy";
+import { composePromptSections } from "../shared/compose-prompt-sections";
 
-export const AGENT_SYSTEM_PROMPT = [
+export const AGENT_SYSTEM_PROMPT = composePromptSections([
   AGENT_IDENTITY,
   AGENT_BOUNDARIES,
   AGENT_INPUTS_EXPECTED,
@@ -26,4 +27,4 @@ export const AGENT_SYSTEM_PROMPT = [
   AGENT_VALIDATION,
   AGENT_FAILURE_MODES,
   AGENT_TOKEN_COMPRESSION_POLICY,
-].join("\n\n");
+]);

@@ -56,4 +56,16 @@ export const agentModelConfig = {
     temperature: 0.2,
     fallbackModels: [],
   },
+
+  "spec-agent": {
+    model: "opencode-go/kimi-k2.6",
+    temperature: 0.1,
+    fallbackModels: ["openai/gpt-5.5"],
+  },
+
+  "apply-agent": {
+    model: "opencode-go/deepseek-v4-flash",
+    temperature: 0.1,
+    fallbackModels: ["opencode-go/kimi-k2.6"],
+  },
 } satisfies Record<AgentName, ModelConfig>;

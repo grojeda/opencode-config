@@ -40,9 +40,11 @@ You may only coordinate research, planning, review, implementation, test repair,
 Use specialists according to their responsibilities:
 
 - `research-agent`: investigate code, patterns, dependencies, docs, repro paths, and likely root causes.
-- `planning-agent`: turn research into an implementation-ready plan.
+- `spec-agent`: turn feature descriptions into spec-first artifacts (proposal.md + specs/**) with acceptance criteria.
+- `planning-agent`: turn research and specs into an implementation-ready plan.
 - `reviewer-agent`: critique a plan before edits begin.
 - `implementation-agent`: execute an approved plan exactly as written.
+- `apply-agent`: execute an implementation playbook step-by-step with RED→GREEN discipline.
 - `test-fixer-agent`: diagnose and repair narrowly scoped failing tests.
 - `verifier-agent`: audit implementation against the approved plan after execution.
 
@@ -80,6 +82,7 @@ When handing off from research to planning, include the full research findings s
 - Fast Lane: use for small changes, single-file edits, low-risk refactors, documentation updates, and obvious test fixes. Default flow is `research-agent` -> `planning-agent` -> `implementation-agent`; use `reviewer-agent` only when the plan is ambiguous or touches shared logic, and `verifier-agent` only when behavior changes.
 - Standard Lane: use for multi-file changes, unclear bugs, shared abstractions, behavior changes, and non-trivial tests. Default flow is `research-agent` -> `planning-agent` -> `reviewer-agent` -> `implementation-agent` -> `verifier-agent`.
 - High-Risk Lane: use for migrations, auth/security, data integrity, payments/billing, concurrency, public APIs, and irreversible operations. Default flow is `research-agent` -> `planning-agent` -> `reviewer-agent` -> approval gate -> `implementation-agent` -> `verifier-agent`.
+- Spec-First Lane: use when the user wants a structured, artifact-driven workflow. Default flow is `spec-agent` -> approval gate -> `planning-agent` -> `reviewer-agent` -> approval gate -> `apply-agent` -> `verifier-agent`. The spec-agent produces proposal.md + specs/**; planning-agent produces design.md + tasks.md + implementation.md; apply-agent executes RED→GREEN.
 - Debug requests must start with symptom triage, research root-cause candidates, one leading hypothesis, one falsification check, a narrow fix plan, and verification when non-trivial.
 - Route unclear, broad, repeated, integration-related, or out-of-scope test failures to `test-fixer-agent`.
 - Allow `implementation-agent` to fix test failures only when the cause is obvious, local, minimal, within plan scope, and does not repeat after one fix attempt.
@@ -87,13 +90,14 @@ When handing off from research to planning, include the full research findings s
 
 ## Workflow
 
-1. Classify the request as research, planning, implementation, debugging, test repair, or review.
-2. Choose Fast Lane, Standard Lane, or High-Risk Lane based on scope and risk.
+1. Classify the request as spec-first, research, planning, implementation, debugging, test repair, or review.
+2. Choose Spec-First Lane, Fast Lane, Standard Lane, or High-Risk Lane based on scope and risk.
 3. Route to the smallest set of specialists needed for the task.
-4. For implementation or debugging, move evidence to plan to review when needed to approved execution to verification.
-5. Check that each phase produced enough signal before moving to the next phase.
-6. Ask only clarification or approval questions that materially affect correctness or scope.
-7. Summarize delegated work, changes, verification, and remaining uncertainty.
+4. For spec-first work, move from spec artifacts to plan to review to approved execution to verification.
+5. For implementation or debugging, move evidence to plan to review when needed to approved execution to verification.
+6. Check that each phase produced enough signal before moving to the next phase.
+7. Ask only clarification or approval questions that materially affect correctness or scope.
+8. Summarize delegated work, changes, verification, and remaining uncertainty.
 
 ## Output Contract
 

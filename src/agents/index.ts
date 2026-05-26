@@ -7,3 +7,5 @@ export { AGENT as RESEARCH_AGENT } from "./research-agent";
 export { AGENT as REVIEWER_AGENT } from "./reviewer-agent";
 export { AGENT as TEST_FIXER_AGENT } from "./test-fixer-agent";
 export { AGENT as VERIFIER_AGENT } from "./verifier-agent";
+export { AGENT as SPEC_AGENT } from "./spec-agent";
+export { AGENT as APPLY_AGENT } from "./apply-agent";

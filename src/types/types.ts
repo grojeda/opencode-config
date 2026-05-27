@@ -7,7 +7,9 @@ export type AgentName =
   | "verifier-agent"
   | "test-fixer-agent"
   | "pr-review-agent"
-  | "prompt-agent";
+  | "prompt-agent"
+  | "spec-agent"
+  | "apply-agent";
 
 export type WorkflowTask =
   | "research"
@@ -18,7 +20,9 @@ export type WorkflowTask =
   | "verification"
   | "test-fix"
   | "orchestration"
-  | "prompting";
+  | "prompting"
+  | "spec"
+  | "apply";
 
 export type ModelConfig = {
   model: string;

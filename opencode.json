@@ -42,6 +42,14 @@
     "prompt-agent": {
       "model": "opencode-go/qwen3.6-plus",
       "temperature": 0.2
+    },
+    "spec-agent": {
+      "model": "opencode-go/kimi-k2.6",
+      "temperature": 0.1
+    },
+    "apply-agent": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "temperature": 0.1
     }
   },
   "permission": {

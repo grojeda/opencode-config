@@ -73,4 +73,20 @@ export const agents = {
     model: agentModelConfig["prompt-agent"],
     permissions: ["read", "write", "edit", "question"],
   },
+
+  "spec-agent": {
+    name: "spec-agent",
+    description: "Turns feature descriptions into spec-first change artifacts: proposal.md and capability specs with acceptance criteria.",
+    task: "spec",
+    model: agentModelConfig["spec-agent"],
+    permissions: ["read", "edit", "question"],
+  },
+
+  "apply-agent": {
+    name: "apply-agent",
+    description: "Executes implementation playbooks step-by-step: RED→GREEN, verify, commit.",
+    task: "apply",
+    model: agentModelConfig["apply-agent"],
+    permissions: ["read", "write", "edit", "bash", "question"],
+  },
 } satisfies Record<AgentName, AgentConfig>;

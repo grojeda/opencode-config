@@ -11,6 +11,8 @@ import {
   VERIFIER_AGENT,
   SPEC_AGENT,
   APPLY_AGENT,
+  PO_AGENT,
+  TECHNICAL_PRODUCT_GUIDE,
 } from "./index";
 
 export const markdownAgents = [
@@ -23,6 +25,8 @@ export const markdownAgents = [
   APPLY_AGENT,
   VERIFIER_AGENT,
   TEST_FIXER_AGENT,
+  PO_AGENT,
+  TECHNICAL_PRODUCT_GUIDE,
   PR_REVIEW_AGENT,
   PROMPT_AGENT,
 ] satisfies AuthoredMarkdownAgent[];

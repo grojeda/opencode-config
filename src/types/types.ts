@@ -9,7 +9,9 @@ export type AgentName =
   | "pr-review-agent"
   | "prompt-agent"
   | "spec-agent"
-  | "apply-agent";
+  | "apply-agent"
+  | "po-agent"
+  | "technical-product-guide";
 
 export type WorkflowTask =
   | "research"
@@ -22,7 +24,9 @@ export type WorkflowTask =
   | "orchestration"
   | "prompting"
   | "spec"
-  | "apply";
+  | "apply"
+  | "po"
+  | "technical-guidance";
 
 export type ModelConfig = {
   model: string;

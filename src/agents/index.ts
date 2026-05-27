@@ -9,3 +9,5 @@ export { AGENT as TEST_FIXER_AGENT } from "./test-fixer-agent";
 export { AGENT as VERIFIER_AGENT } from "./verifier-agent";
 export { AGENT as SPEC_AGENT } from "./spec-agent";
 export { AGENT as APPLY_AGENT } from "./apply-agent";
+export { AGENT as PO_AGENT } from "./po-agent";
+export { AGENT as TECHNICAL_PRODUCT_GUIDE } from "./technical-product-guide";

@@ -50,6 +50,14 @@
     "apply-agent": {
       "model": "opencode-go/deepseek-v4-flash",
       "temperature": 0.1
+    },
+    "po-agent": {
+      "model": "opencode-go/qwen3.6-plus",
+      "temperature": 0.3
+    },
+    "technical-product-guide": {
+      "model": "opencode-go/qwen3.6-plus",
+      "temperature": 0.3
     }
   },
   "permission": {

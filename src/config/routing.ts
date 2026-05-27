@@ -12,4 +12,6 @@ export const taskToAgent = {
   verification: "verifier-agent",
   spec: "spec-agent",
   apply: "apply-agent",
+  po: "po-agent",
+  "technical-guidance": "technical-product-guide",
 } satisfies Record<WorkflowTask, AgentName>;

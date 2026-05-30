@@ -58,6 +58,10 @@
     "technical-product-guide": {
       "model": "opencode-go/qwen3.6-plus",
       "temperature": 0.3
+    },
+    "gitmoji-staged-commit-agent": {
+      "model": "opencode-go/qwen3.6-plus",
+      "temperature": 0.1
     }
   },
   "permission": {

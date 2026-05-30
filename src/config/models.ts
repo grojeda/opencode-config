@@ -80,4 +80,10 @@ export const agentModelConfig = {
     temperature: 0.3,
     fallbackModels: [],
   },
+
+  "gitmoji-staged-commit-agent": {
+    model: "opencode-go/qwen3.6-plus",
+    temperature: 0.1,
+    fallbackModels: [],
+  },
 } satisfies Record<AgentName, ModelConfig>;

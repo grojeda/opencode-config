@@ -13,6 +13,7 @@ import {
   APPLY_AGENT,
   TECHNICAL_PRODUCT_GUIDE,
   GITMOJI_STAGED_COMMIT_AGENT,
+  README_ARCHITECT,
 } from "./index";
 
 export const markdownAgents = [
@@ -29,4 +30,5 @@ export const markdownAgents = [
   PR_REVIEW_AGENT,
   PROMPT_AGENT,
   GITMOJI_STAGED_COMMIT_AGENT,
+  README_ARCHITECT,
 ] satisfies AuthoredMarkdownAgent[];

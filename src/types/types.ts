@@ -11,7 +11,8 @@ export type AgentName =
   | "spec-agent"
   | "apply-agent"
   | "technical-product-guide"
-  | "gitmoji-staged-commit-agent";
+  | "gitmoji-staged-commit-agent"
+  | "readme-architect";
 
 export type WorkflowTask =
   | "research"
@@ -26,7 +27,8 @@ export type WorkflowTask =
   | "spec"
   | "apply"
   | "technical-guidance"
-  | "gitmoji-commit";
+  | "gitmoji-commit"
+  | "readme-creation";
 
 export type ModelConfig = {
   model: string;

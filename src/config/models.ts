@@ -80,4 +80,10 @@ export const agentModelConfig = {
     temperature: 0.1,
     fallbackModels: [],
   },
+
+  "readme-architect": {
+    model: "opencode-go/qwen3.6-plus",
+    temperature: 0.2,
+    fallbackModels: [],
+  },
 } satisfies Record<AgentName, ModelConfig>;

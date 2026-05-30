@@ -105,4 +105,12 @@ export const agents = {
     model: agentModelConfig["gitmoji-staged-commit-agent"],
     permissions: ["read", "bash", "question"],
   },
+
+  "readme-architect": {
+    name: "readme-architect",
+    description: "Creates, improves, and maintains professional README.md files for software projects.",
+    task: "readme-creation",
+    model: agentModelConfig["readme-architect"],
+    permissions: ["read", "edit", "web", "question", "task"],
+  },
 } satisfies Record<AgentName, AgentConfig>;

@@ -69,12 +69,6 @@ export const agentModelConfig = {
     fallbackModels: ["opencode-go/kimi-k2.6"],
   },
 
-  "po-agent": {
-    model: "opencode-go/qwen3.6-plus",
-    temperature: 0.3,
-    fallbackModels: [],
-  },
-
   "technical-product-guide": {
     model: "opencode-go/qwen3.6-plus",
     temperature: 0.3,

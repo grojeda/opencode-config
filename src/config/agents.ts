@@ -90,14 +90,6 @@ export const agents = {
     permissions: ["read", "write", "edit", "bash", "question"],
   },
 
-  "po-agent": {
-    name: "po-agent",
-    description: "Product Owner agent that helps you understand the application, what to work on next, open questions, risks, and priorities.",
-    task: "po",
-    model: agentModelConfig["po-agent"],
-    permissions: ["read", "question", "task"],
-  },
-
   "technical-product-guide": {
     name: "technical-product-guide",
     description: "Agent that helps developers understand a task, navigate the codebase, identify affected areas, risks, open questions, and the next technical steps without writing implementation code.",

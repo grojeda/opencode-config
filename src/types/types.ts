@@ -10,7 +10,6 @@ export type AgentName =
   | "prompt-agent"
   | "spec-agent"
   | "apply-agent"
-  | "po-agent"
   | "technical-product-guide"
   | "gitmoji-staged-commit-agent";
 
@@ -26,7 +25,6 @@ export type WorkflowTask =
   | "prompting"
   | "spec"
   | "apply"
-  | "po"
   | "technical-guidance"
   | "gitmoji-commit";
 

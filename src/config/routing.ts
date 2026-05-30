@@ -12,7 +12,6 @@ export const taskToAgent = {
   verification: "verifier-agent",
   spec: "spec-agent",
   apply: "apply-agent",
-  po: "po-agent",
   "technical-guidance": "technical-product-guide",
   "gitmoji-commit": "gitmoji-staged-commit-agent",
 } satisfies Record<WorkflowTask, AgentName>;

@@ -98,14 +98,6 @@ export const agents = {
     permissions: ["read", "question", "task"],
   },
 
-  "gitmoji-staged-commit-agent": {
-    name: "gitmoji-staged-commit-agent",
-    description: "Reviews only staged Git changes, proposes a Gitmoji-compliant commit message, commits after explicit confirmation, and pushes only with authorization.",
-    task: "gitmoji-commit",
-    model: agentModelConfig["gitmoji-staged-commit-agent"],
-    permissions: ["read", "bash", "question"],
-  },
-
   "readme-architect": {
     name: "readme-architect",
     description: "Creates, improves, and maintains professional README.md files for software projects.",

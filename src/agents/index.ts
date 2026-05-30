@@ -10,5 +10,4 @@ export { AGENT as VERIFIER_AGENT } from "./verifier-agent";
 export { AGENT as SPEC_AGENT } from "./spec-agent";
 export { AGENT as APPLY_AGENT } from "./apply-agent";
 export { AGENT as TECHNICAL_PRODUCT_GUIDE } from "./technical-product-guide";
-export { AGENT as GITMOJI_STAGED_COMMIT_AGENT } from "./gitmoji-staged-commit-agent";
 export { AGENT as README_ARCHITECT } from "./readme-architect";

@@ -13,6 +13,5 @@ export const taskToAgent = {
   spec: "spec-agent",
   apply: "apply-agent",
   "technical-guidance": "technical-product-guide",
-  "gitmoji-commit": "gitmoji-staged-commit-agent",
   "readme-creation": "readme-architect",
 } satisfies Record<WorkflowTask, AgentName>;

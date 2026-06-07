@@ -2,7 +2,7 @@ import type { AgentName, ModelConfig } from "../types/types";
 
 export const agentModelConfig = {
   "orchestrator-agent": {
-    model: "opencode-go/qwen3.6-plus",
+    model: "opencode-go/qwen3.7-plus",
     temperature: 0.1,
     fallbackModels: [],
   },
@@ -52,7 +52,7 @@ export const agentModelConfig = {
   },
 
   "prompt-agent": {
-    model: "opencode-go/qwen3.6-plus",
+    model: "opencode-go/qwen3.7-plus",
     temperature: 0.2,
     fallbackModels: [],
   },
@@ -70,13 +70,13 @@ export const agentModelConfig = {
   },
 
   "technical-product-guide": {
-    model: "opencode-go/qwen3.6-plus",
+    model: "opencode-go/qwen3.7-plus",
     temperature: 0.3,
     fallbackModels: [],
   },
 
   "readme-architect": {
-    model: "opencode-go/qwen3.6-plus",
+    model: "opencode-go/qwen3.7-plus",
     temperature: 0.2,
     fallbackModels: [],
   },

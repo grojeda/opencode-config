@@ -2,11 +2,11 @@
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["@warp-dot-dev/opencode-warp"],
   "autoupdate": "notify",
-  "model": "opencode-go/qwen3.6-plus",
+  "model": "opencode-go/qwen3.7-plus",
   "small_model": "opencode-go/qwen3.5-plus",
   "agent": {
     "orchestrator-agent": {
-      "model": "opencode-go/qwen3.6-plus",
+      "model": "opencode-go/qwen3.7-plus",
       "temperature": 0.1
     },
     "planning-agent": {
@@ -40,7 +40,7 @@
       "variant": "xhigh"
     },
     "prompt-agent": {
-      "model": "opencode-go/qwen3.6-plus",
+      "model": "opencode-go/qwen3.7-plus",
       "temperature": 0.2
     },
     "spec-agent": {
@@ -52,11 +52,11 @@
       "temperature": 0.1
     },
     "technical-product-guide": {
-      "model": "opencode-go/qwen3.6-plus",
+      "model": "opencode-go/qwen3.7-plus",
       "temperature": 0.3
     },
     "gitmoji-staged-commit-agent": {
-      "model": "opencode-go/qwen3.6-plus",
+      "model": "opencode-go/qwen3.7-plus",
       "temperature": 0.1
     }
   },

@@ -51,7 +51,7 @@ pnpm check
 
 | Agent | Purpose | Model |
 |---|---|---|
-| **orchestrator-agent** | Routes work, manages lanes and approval gates | `qwen3.6-plus` |
+| **orchestrator-agent** | Routes work, manages lanes and approval gates | `qwen3.7-plus` |
 | **research-agent** | Codebase mapping, root-cause analysis | `deepseek-v4-flash` |
 | **planning-agent** | Implementation-ready plans | `gpt-5.5` (xhigh) |
 | **reviewer-agent** | Adversarial plan stress-testing | `glm-5.1` |
@@ -64,11 +64,11 @@ pnpm check
 | Agent | Purpose | Model |
 |---|---|---|
 | **pr-review-agent** | PR review via `gh` CLI | `glm-5.1` |
-| **prompt-agent** | Refine agent prompts | `qwen3.6-plus` |
+| **prompt-agent** | Refine agent prompts | `qwen3.7-plus` |
 | **spec-agent** | Proposal + capability specs | `kimi-k2.6` |
 | **apply-agent** | Execute playbooks (RED→GREEN) | `deepseek-v4-flash` |
-| **readme-architect** | Professional READMEs | `qwen3.6-plus` |
-| **technical-product-guide** | Codebase navigation guidance | `qwen3.6-plus` |
+| **readme-architect** | Professional READMEs | `qwen3.7-plus` |
+| **technical-product-guide** | Codebase navigation guidance | `qwen3.7-plus` |
 
 ---
 
@@ -126,7 +126,7 @@ All lanes run through `orchestrator-agent` with `[y/N/edit]` approval gates befo
 
 ```json
 {
-  "model": "opencode-go/qwen3.6-plus",
+  "model": "opencode-go/qwen3.7-plus",
   "permission": { "bash": "ask", "edit": "allow" },
   "compaction": { "auto": true, "prune": true },
   "watcher": { "ignore": ["node_modules/**", "dist/**", ".git/**"] }

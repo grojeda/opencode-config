@@ -80,4 +80,10 @@ export const agentModelConfig = {
     temperature: 0.2,
     fallbackModels: [],
   },
+
+  "security-review-agent": {
+    model: "opencode-go/glm-5.2",
+    temperature: 0.1,
+    fallbackModels: ["openai/gpt-5.5"],
+  },
 } satisfies Record<AgentName, ModelConfig>;

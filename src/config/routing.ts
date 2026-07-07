@@ -14,4 +14,5 @@ export const taskToAgent = {
   apply: "apply-agent",
   "technical-guidance": "technical-product-guide",
   "readme-creation": "readme-architect",
+  "security-review": "security-review-agent",
 } satisfies Record<WorkflowTask, AgentName>;

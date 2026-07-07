@@ -11,3 +11,4 @@ export { AGENT as SPEC_AGENT } from "./spec-agent";
 export { AGENT as APPLY_AGENT } from "./apply-agent";
 export { AGENT as TECHNICAL_PRODUCT_GUIDE } from "./technical-product-guide";
 export { AGENT as README_ARCHITECT } from "./readme-architect";
+export { AGENT as SECURITY_REVIEW_AGENT } from "./security-review-agent";

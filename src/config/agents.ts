@@ -105,4 +105,12 @@ export const agents = {
     model: agentModelConfig["readme-architect"],
     permissions: ["read", "edit", "web", "question", "task"],
   },
+
+  "security-review-agent": {
+    name: "security-review-agent",
+    description: "Reviews source code, diffs, dependency manifests, and configuration for security vulnerabilities (OWASP/CWE), weak auth, authorization gaps, secret leakage, vulnerable dependencies, and misconfiguration.",
+    task: "security-review",
+    model: agentModelConfig["security-review-agent"],
+    permissions: ["read", "question"],
+  },
 } satisfies Record<AgentName, AgentConfig>;

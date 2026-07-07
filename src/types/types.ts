@@ -11,7 +11,8 @@ export type AgentName =
   | "spec-agent"
   | "apply-agent"
   | "technical-product-guide"
-  | "readme-architect";
+  | "readme-architect"
+  | "security-review-agent";
 
 export type WorkflowTask =
   | "research"
@@ -26,7 +27,8 @@ export type WorkflowTask =
   | "spec"
   | "apply"
   | "technical-guidance"
-  | "readme-creation";
+  | "readme-creation"
+  | "security-review";
 
 export type ModelConfig = {
   model: string;

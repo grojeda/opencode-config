@@ -19,11 +19,11 @@
       "temperature": 0.1
     },
     "reviewer-agent": {
-      "model": "opencode-go/glm-5.1",
+      "model": "opencode-go/glm-5.2",
       "temperature": 0.1
     },
     "pr-review-agent": {
-      "model": "opencode-go/glm-5.1",
+      "model": "opencode-go/glm-5.2",
       "temperature": 0.1
     },
     "implementation-agent": {

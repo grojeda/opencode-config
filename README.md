@@ -126,7 +126,7 @@ All lanes run through `orchestrator-agent` with `[y/N/edit]` approval gates befo
 
 ```json
 {
-  "model": "opencode-go/qwen3.7-plus",
+  "model": "opencode-go/glm-5.2",
   "permission": { "bash": "ask", "edit": "allow" },
   "compaction": { "auto": true, "prune": true },
   "watcher": { "ignore": ["node_modules/**", "dist/**", ".git/**"] }
